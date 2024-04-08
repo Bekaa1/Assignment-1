@@ -47,23 +47,33 @@ public class solutionads {
         }
     }
 
-    // Find the minimum element in an array
     public static int findMin(int n, int[] arr) {
         if (n == 1) {
             return arr[0];
         }
         return Math.min(arr[n - 1], findMin(n - 1, arr));
     }
-
-    // Calculate the average of an array
+    /**
+     * This method finds the minimum number in an array using recursion.
+     * It compares each element of the array to find the smallest value.
+     * @param n The number of elements in the array, used for recursion.
+     * @param arr The array of numbers.
+     * @return The smallest number found in the array.
+     */
     public static double calculateAverage(int n, int[] arr) {
         if (n == 1) {
             return arr[0];
         }
         return (arr[n - 1] + (n - 1) * calculateAverage(n - 1, arr)) / n;
     }
+    /**
+    * This function calculates the average of an array using recursion.
+    * The sum of all elements in the array is calculated and then divided by the total number of elements.
+     * @param n The number of elements in the array.
+     * @param arr The array of elements.
+    * @return The average value of the elements in the array, as a double.
+ */
 
-    // Check if a number is prime
     public static boolean isPrime(int num) {
         if (num <= 1) {
             return false;
@@ -75,32 +85,54 @@ public class solutionads {
         }
         return true;
     }
+    /**
+     * This function is designed to identify whether a given number is a prime or composite number.
+     * It employs two specific conditions to make this determination.
+     * @param num the number that we're evaluating
+     * @return true if the number is found to be prime, and false otherwise
+     */
 
-    // Calculate the factorial of a number
     public static int factorial(int n) {
         if (n == 1) {
             return 1;
         }
         return n * factorial(n - 1);
     }
+    /**
+     * This function calculates the factorial of a given number using recursion.
+     * It works by multiplying the given number 'n' by the factorial of 'n-1', and so on,
+     * until the base case of 1 is reached. This is equivalent to calculating n! = n*(n-1)*(n-2)*...*1.
+     * @param n the number whose factorial is to be calculated
+     * @return the factorial of the given number
+     */
 
-    // Calculate the nth Fibonacci number
     public static int fibonacci(int n) {
         if (n <= 1) {
             return n;
         }
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
+    /**
+     * Calculates the Fibonacci sequence up to a given number using recursion.
+     * Returns the sum of all terms up to the given number.
+     * @param n the upper limit of the Fibonacci sequence to calculate
+     * @return the sum of all terms in the Fibonacci sequence up to the given number
+     */
 
-    // Calculate the power of a number
     public static int power(int base, int exponent) {
         if (exponent == 1) {
             return base;
         }
         return base * power(base, exponent - 1);
     }
+    /**
+     * Calculates the power of a number using recursion.
+     * Repeatedly multiplies the base number by itself until the power is reached.
+     * @param base the number to be raised to a power
+     * @param exponent the power to raise the base number to
+     * @return the result of base^power
+     */
 
-    // Reverse an array
     public static void reverseArray(int n, int[] arr) {
         if (n == 1) {
             System.out.print(arr[0] + " ");
@@ -109,8 +141,11 @@ public class solutionads {
         System.out.print(arr[n - 1] + " ");
         reverseArray(n - 1, arr);
     }
-
-    // Check if a string contains a digit
+    /**
+     * This function reverses array using recursion
+     * @param arr our array
+     * @param n number of elements in the array
+     */
     public static boolean containsNumber(String str) {
         for (int i = 0; i < str.length(); i++) {
             if (Character.isDigit(str.charAt(i))) {
@@ -119,20 +154,38 @@ public class solutionads {
         }
         return false;
     }
+    /**
+     * Determines if a string contains any digits.
+     * Checks each character using Character.isDigit
+     * @param s the string to check
+     * @param index the current index being checked
+     * @return true if a digit is found, false otherwise
+     */
 
-    // Calculate the binomial coefficient
     public static int binomialCoefficient(int n, int k) {
         if (k == 0 || n == k) {
             return 1;
         }
         return binomialCoefficient(n - 1, k - 1) + binomialCoefficient(n - 1, k);
     }
+    /**
+     * Calculates the binomial coefficient C(n, k).
+     * @param n the value of n in the formula
+     * @param k the value of k in the formula
+     * @return the result of the calculation
+     */
 
-    // Calculate the greatest common divisor (GCD) of two numbers
     public static int gcd(int a, int b) {
         if (b == 0) {
             return a;
         }
         return gcd(b, a % b);
     }
+    /**
+     * This function calculates the GCD of two numbers using the Euclidean algorithm and recursion.
+     * @param a the first number
+     * @param b the second number
+     * @return the GCD of the two numbers
+     */
+
 }

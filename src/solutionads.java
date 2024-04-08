@@ -7,7 +7,7 @@ public class solutionads {
         Scanner scanner = new Scanner(System.in);
         int problemNumber = scanner.nextInt();
 
-        int[] sampleArray = {1, 2, 3, 4, 0};
+        int[] sampleArray = {3,7,8,9,5};
         int arraySize = 5;
 
         switch (problemNumber) {
